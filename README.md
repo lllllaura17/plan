@@ -5,6 +5,7 @@ Activity Planner API
 
 Назначение:
 API управляет списком активностей и оценивает их пригодность в зависимости от погодных условий, получаемых извне (через сервис-координатор или клиент).
+
 Модель activity:
 {
   "name": "Running",
@@ -14,12 +15,14 @@ API управляет списком активностей и оценивае
   "allowLightRain": false,
   "maxWindSpeed": 10
 }
+
 Модель weatherdata:
 {
   "temperature": 20,
   "isRaining": false,
   "windSpeed": 5
 }
+
 suitability:
 | Значение | Описание    |
 | ------—- | ---———----- |
@@ -29,18 +32,14 @@ suitability:
 
 ЭНДПОИНТЫ:
 
-Получить все активности:
-GET /api/activities
+Получить все активности: GET /api/activities
 
-Добавить активность:
-POST /api/activities
+Добавить активность: POST /api/activities
 
-Обновить активность:
-PUT /api/activities/{name}
+Обновить активность: PUT /api/activities/{name}
 
-Удалить активность:
-DELETE /api/activities/{name}
+Удалить активность: DELETE /api/activities/{name}
 
-Оценить активность по погодным условиям:
-POST /api/activities/evaluate
+Оценить активность по погодным условиям: POST /api/activities/evaluate
+
 Тело запроса: модель weatherdata
